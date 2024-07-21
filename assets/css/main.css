@@ -201,6 +201,7 @@ i[class*=h-icon-] {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -486,12 +487,14 @@ ul.list_none li {
   background-size: cover;
   background-position: center;
   position: relative;
+  background-attachment: fixed;
 }
 
 .bg_calfornia {
   background-image: url("/assets/images/calofonia.jpg") !important;
   position: relative;
   z-index: 1;
+  background-attachment: scroll;
 }
 
 .bg_calfornia:before {
@@ -1555,7 +1558,16 @@ header .header_main .navbar-nav li .dropdown-menu a:hover {
 
 .hero_section_banner {
   position: relative;
-  height: 45vh;
+  height: 60vh;
+}
+.hero_section_banner:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.48);
+  width: 100%;
+  height: 100%;
 }
 .hero_section_banner .hero_banner_thumb {
   height: 100%;
@@ -1565,18 +1577,16 @@ header .header_main .navbar-nav li .dropdown-menu a:hover {
   object-fit: cover;
 }
 .hero_section_banner .hero_banner_content {
-  max-width: 750px;
-  background: rgba(239, 56, 63, 0.66);
-  margin-left: auto;
   height: 100%;
-  padding: 60px;
   display: flex;
   flex-flow: column;
   justify-content: center;
   position: absolute;
-  right: 0;
-  top: 0;
-  height: 100%;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%);
+  text-align: center;
+  height: 70%;
 }
 .hero_section_banner .hero_banner_content h2, .hero_section_banner .hero_banner_content p {
   color: #fff;
@@ -1602,6 +1612,9 @@ header .header_main .navbar-nav li .dropdown-menu a:hover {
 .section_services {
   color: #fff;
   padding: 60px;
+}
+.section_services .col-md-4 {
+  margin-bottom: 30px;
 }
 .section_services .main_heading {
   color: white;
@@ -1872,6 +1885,11 @@ article .blog_card .blog_content p {
   border-bottom: 1px solid gray;
 }
 
+@media only screen and (max-width: 991.98px) {
+  .img_object .row {
+    flex-direction: column-reverse;
+  }
+}
 .img_object .about_thumb {
   width: 100%;
   height: 100%;
@@ -1891,6 +1909,22 @@ article .blog_card .blog_content p {
   .inner_about_services {
     flex-flow: column;
   }
+}
+
+@media only screen and (max-width: 991.98px) {
+  .object_left .row {
+    flex-direction: column-reverse;
+  }
+}
+.object_left .about_thumb {
+  width: 100%;
+  height: 100%;
+}
+.object_left .about_thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
 }
 
 .free_fotter {
@@ -2143,7 +2177,7 @@ article .blog_card .blog_content p {
     padding: 60px 0px 20px;
   }
   .hero_section_banner {
-    height: 23vh;
+    height: 35vh;
   }
 }
 

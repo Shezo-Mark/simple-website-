@@ -13,6 +13,9 @@
 .section_services{
     color: $white;
     padding: 60px;
+    .col-md-4{
+        margin-bottom: 30px;
+    }
     .main_heading{
         color: white;
         margin-bottom: 20px;

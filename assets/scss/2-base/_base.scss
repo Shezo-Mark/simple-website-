@@ -5,6 +5,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 body {
   font-family: $main-font-family;
@@ -235,11 +236,13 @@ ul.list_none{
  background-size: cover;
  background-position: center;
  position: relative;
+background-attachment: fixed;
 }
 .bg_calfornia{
   background-image: url('/assets/images/calofonia.jpg') !important;
   position: relative;
   z-index: 1;
+  background-attachment: scroll;
 }
 .bg_calfornia:before {
   content: "";
